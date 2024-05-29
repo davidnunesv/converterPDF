@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Service</title>
+</head>
+<body>
+    <h1>PDF Service</h1>
+    <h2>Reduzir Resolução</h2>
+    <form action="http://localhost:8081/reduce" method="post" enctype="multipart/form-data">
+        <label for="resolution">Resolução:</label>
+        <select name="resolution" id="resolution">
+            <option value="screen">Screen</option>
+            <option value="ebook">Ebook</option>
+            <option value="printer">Printer</option>
+            <option value="prepress">Prepress</option>
+        </select>
+        <input type="file" name="file">
+        <button type="submit">Enviar</button>
+    </form>
+
+    <h2>Converter para TXT</h2>
+    <form action="http://localhost:8082/convert" method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,31 @@
+version: '3'
+services:
+  ghostscript:
+    image: ghostscript:latest
+    container_name: ghostscript_service
+    build:
+      context: ./ghostscript
+    volumes:
+      - ./data:/data
+    ports:
+      - "8081:8081"
+
+  pdftotxt:
+    image: pdftotxt:latest
+    container_name: pdftotxt_service
+    build:
+      context: ./pdftotxt
+    volumes:
+      - ./data:/data
+    ports:
+      - "8082:8082"
+
+  logservice:
+    image: logservice:latest
+    container_name: log_service
+    build:
+      context: ./logservice
+    volumes:
+      - ./logs:/logs
+    ports:
+      - "8083:8083"
